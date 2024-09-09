@@ -142,4 +142,5 @@ delegacoes.set_index('Nome', inplace=True)
 delegacoes['Número de Participações'] = resultados['Debatedor'].value_counts()
 delegacoes['Média de Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').mean()
 delegacoes['Total Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').sum()
+delegacoes.sort_values('Total Sps', ascending=False, inplace=True)
 delegacoes
