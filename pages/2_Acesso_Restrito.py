@@ -9,7 +9,7 @@ import streamlit_authenticator as stauth
 import pandas as pd
 
 st.set_page_config(
-    page_title="I TAÇA DAS SOCIEDADES",
+    page_title="Area restrita - Taça das Sociedades",
     page_icon=":trophy:",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -60,15 +60,6 @@ if authentication_status:
     lista_rodadas = rodadas['Rodada'].unique()
     sds = delegacoes['instituicao'].unique()
     sds = pd.DataFrame(sds, columns=['Instituição'])
-    imagens_sds = ['logo_sds/sdufrj.jpeg', 'logo_sds/gdo.jpeg','logo_sds/sddufc.jpeg','logo_sds/sds.jpeg'
-                   ,'logo_sds/sddufsc.jpeg','logo_sds/hermeneutica.jpeg','logo_sds/senatus.jpeg','logo_sds/sdp.jpeg']
-    sds['Equipe'] = imagens_sds
-    sds.set_index('Instituição', inplace=True)
-    sds["Pontos"] = 0
-    sds["N de Primeiros"] = 0
-    sds["Total Sps"] = 0
-    sds['Juizes Enviados'] = 0
-
     juizes['Juiz_cargo'] = juizes['Juiz'] + juizes['Posição']
     juizes['Juizes'] = juizes[['Rodada','Sala','Juiz_cargo']].groupby(['Rodada','Sala'])['Juiz_cargo'].transform(lambda x: ','.join(x))
     juizes_sintetico = juizes.drop(columns=['Juiz','Posição','Juiz_cargo'])
@@ -97,39 +88,14 @@ if authentication_status:
     if name != 'Master':
         debatedores = delegacoes[delegacoes['instituicao'] == name]['Nome']
 
-    for index, row in partidas_agregado.iterrows():
-        equipe = row['Instituição']
-        resultado = row['Classificação']
-        sds.loc[equipe, 'Total Sps'] += row['Sps']
-        if resultado == '1°':
-            sds.loc[equipe, 'Pontos'] += 3
-            sds.loc[equipe, 'N de Primeiros'] += 1
-        elif resultado == '2°':
-            sds.loc[equipe, 'Pontos'] += 2
-        elif resultado == '3°':
-            sds.loc[equipe, 'Pontos'] += 1
-        elif resultado == '4°':
-            sds.loc[equipe, 'Pontos'] += 0
-
-    for indez, row in juizes.iterrows():
-        equipe = row['SD']
-        if equipe != 'Condeb':
-            sds.loc[equipe, 'Juizes Enviados'] += 1
-
-    sds.sort_values(['Pontos', 'N de Primeiros', 'Total Sps'], ascending=[False, False, False], inplace=True)
-    sds.reset_index(inplace=True)
-    sds.index += 1
-    sds['Colocação'] = sds.index
-    sds.set_index('Colocação', inplace=True)
-
     #----------- ATUALIZAÇÃO DE DEBATEDOR DA PARTIDA ----------------
 
     if name == 'Master':
-        st.sidebar.write('### Aconpanhamento de inscrições: Rodada ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
-        st.sidebar.dataframe(temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)])
+        st.write('### Aconpanhamento de inscrições: Rodada ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
+        st.dataframe(temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)])
         falta_escalacao = sds[~sds['Instituição'].isin(temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)]['delegação'].unique())]
         if not falta_escalacao.empty:
-            st.sidebar.warning('### Atenção! As seguintes equipes ainda não escalaram seus debatedores:' + str(falta_escalacao['Instituição'].values.tolist()))
+            st.warning('### Atenção! As seguintes equipes ainda não escalaram seus debatedores:' + str(falta_escalacao['Instituição'].values.tolist()))
         else:
             escalacao_completa = temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)]
             debatedores_rodada = pd.concat([escalacao_completa[['delegação','membro 1']], escalacao_completa[['delegação','membro 2']]])
@@ -137,14 +103,13 @@ if authentication_status:
             debatedores_rodada = debatedores_rodada[['delegação','membro 1']].rename(columns={'membro 1':'Nome'})
 
 
-            st.sidebar.markdown('### Alocação de Juízes')
+            st.markdown('### Alocação de Juízes')
             with st.form(key='alocacao_form'):
-                with st.sidebar:
-                    chair_sala_1 = st.text_input('Chair Sala 1')
-                    chair_sala_2 = st.text_input('Chair Sala 2')
-                    juiz_sala_1 = st.multiselect('Juiz Sala 1', escalacao_completa[escalacao_completa['juiz'].notnull()]['juiz'].unique())
-                    juiz_sala_2 = st.multiselect('Juiz Sala 2', escalacao_completa[escalacao_completa['juiz'].notnull()]['juiz'].unique())
-                    cadastrar_aloc = st.form_submit_button(label = "Alocar Juízes")
+                chair_sala_1 = st.text_input('Chair Sala 1')
+                chair_sala_2 = st.text_input('Chair Sala 2')
+                juiz_sala_1 = st.multiselect('Juiz Sala 1', escalacao_completa[escalacao_completa['juiz'].notnull()]['juiz'].unique())
+                juiz_sala_2 = st.multiselect('Juiz Sala 2', escalacao_completa[escalacao_completa['juiz'].notnull()]['juiz'].unique())
+                cadastrar_aloc = st.form_submit_button(label = "Alocar Juízes")
 
             if cadastrar_aloc:
                 if not chair_sala_1 or not chair_sala_2 or not juiz_sala_1 or not juiz_sala_2:
@@ -165,7 +130,7 @@ if authentication_status:
                     alocacao['Juizes'] = alocacao[['Rodada','Sala','Juiz_cargo']].groupby(['Rodada','Sala'])['Juiz_cargo'].transform(lambda x: ','.join(x))
                     updated_df = pd.concat([juizes, alocacao], ignore_index=True)
                     conn.update(worksheet='TdS_Juizes', data=updated_df)
-                    st.sidebar.success('Escalação Cadastrada!')
+                    st.success('Escalação Cadastrada!')
             st.markdown('### DRAW DA RODADA: ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
 
             draw_rodada = base_resultados[base_resultados.index == int(rodada_corrente)].replace(' - nan', '', regex=True)
@@ -189,6 +154,7 @@ if authentication_status:
                     st.markdown('#### 2° GOVERNO: ' + str(draw_rodada['2° GOVERNO'].values[0]))
                     col50, col51 = st.columns(2)
                     with col50:
+
                         ext_gov1 = st.selectbox('Membro do Governo',debatedores_rodada[debatedores_rodada['delegação'] == draw_rodada['2° GOVERNO'].values[0]]['Nome'], index=None)
                         wp_gov1 = st.selectbox('Whip do Governo', debatedores_rodada[debatedores_rodada['delegação'] == draw_rodada['2° GOVERNO'].values[0]]['Nome'], index=None)
                     with col51:
@@ -322,103 +288,41 @@ if authentication_status:
 
 
     else:
-        st.sidebar.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
+        st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
 
-        with st.form(key="escalacao_form"):
-            with st.sidebar:
-                debatedor_1 = st.sidebar.selectbox('Debatedor 1', debatedores, index=None)
-                debatedor_2 = st.sidebar.selectbox('Debatedor 2', debatedores, index=None)
+        if temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)].empty:
+            with st.form(key="escalacao_form"):
+                debatedor_1 = st.selectbox('Debatedor 1', debatedores, index=None)
+                debatedor_2 = st.selectbox('Debatedor 2', debatedores, index=None)
                 if juizes_rodada[juizes_rodada['Juizes'] == str(name)].empty:
-                    st.sidebar.caption('### SD não escalada para enviar juiz para esta rodada')
+                    st.caption('### SD não escalada para enviar juiz para esta rodada')
                     juiz = ''
                     email_juiz = ''
                 else:
-                    juiz = st.sidebar.text_input('Juiz Representante')
-                    email_juiz = st.sidebar.text_input('Email do Juiz')
+                    juiz = st.text_input('Juiz Representante')
+                    email_juiz = st.text_input('Email do Juiz')
                 cadastrar = st.form_submit_button(label = "Cadastrar")
-        if cadastrar:
-            if not debatedor_1 or not debatedor_2:
-                st.warning("Por favor, preencha todos os campos para seguir com Cadastro")
-                st.stop()
-            else:
-                cadastro_rodada = pd.DataFrame([
-                    {
-                        'rodada': int(rodada_corrente),
-                        'delegação': name,
-                        'membro 1': debatedor_1,
-                        'membro 2': debatedor_2,
-                        'juiz': juiz,
-                        'e-mail juiz':email_juiz
-                    }
-                ]
-                )
-                updated_df = pd.concat([temporario_rodada, cadastro_rodada], ignore_index=True)
-                conn.update(worksheet='TdS_Suporte', data=updated_df)
-                st.sidebar.success('Escalação Cadastrada!')
-
-    def open_image(path: str):
-        with open(path, "rb") as p:
-            file = p.read()
-            return f"data:image/png;base64,{base64.b64encode(file).decode()}"
-
-
-    sds["Equipe"] = sds.apply(lambda x: open_image(x['Equipe']), axis=1)
-    sds = sds[['Equipe','Instituição','Pontos','N de Primeiros','Total Sps','Juizes Enviados']]
-
-
-    st.write('### TABELA DA COMPETIÇÃO')
-    st.dataframe(sds,
-                    column_config={
-                        "Total Sps": st.column_config.ProgressColumn('Total Sps', format="%d", min_value=0, max_value=str(sds['Total Sps'].max())),
-                        "Equipe":st.column_config.ImageColumn()
-                    })
-
-    st.divider()
-
-    col1, col2, col10 = st.columns(3)
-    with col1:
-        st.write('### CHAVEAMENTO')
-        tabela_partidas
-
-    with col2:
-        st.write('#### Próxima Rodada: ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
-        tabela_rodada = tabela_partidas.loc[rodada_corrente]
-        tabela_rodada = tabela_rodada.set_index('Sala')
-        tabela_rodada = tabela_rodada[['1° GOVERNO','1ª OPOSIÇÃO','2° GOVERNO','2ª OPOSIÇÃO']]
-        tabela_rodada
-        st.write('##### Escalação de Juízes: ' + str(juizes_rodada['Juizes'].to_list()).replace('[','').replace(']','').replace("'",''))
-
-    with col10:
-        st.write('### CALENDARIO')
-        calendario = rodadas[['Rodada','Data','Horário','Escalação Juízes']].set_index('Rodada')
-        calendario
-
-    
-    st.divider()
-
-    col3, col4 = st.columns(2)
-    with col3:
-        st.write('### RESULTADOS GERAIS')
-        base_resultados
-
-    with col4:
-        st.write('### RESULTADOS POR RODADA')
-        tabela_resultado = tabela_resultado.set_index('Instituição')
-        tabela_resultado
-
-    st.sidebar.write('### Dowload Resultados')
-    st.dowload_button(
-        label='Resultado Rodada',
-        data= resultados.to_csv(index=False),
-        file_name='Resultados.csv',
-        mime='text/csv'
-    )
-
-    st.dowload_button(
-        label='Resultado Juízes',
-        data= juizes.to_csv(index=False),
-        file_name='juizes.csv',
-        mime='text/csv'
-    )
+            if cadastrar:
+                if not debatedor_1 or not debatedor_2:
+                    st.warning("Por favor, preencha todos os campos para seguir com Cadastro")
+                    st.stop()
+                else:
+                    cadastro_rodada = pd.DataFrame([
+                        {
+                            'rodada': int(rodada_corrente),
+                            'delegação': name,
+                            'membro 1': debatedor_1,
+                            'membro 2': debatedor_2,
+                            'juiz': juiz,
+                            'e-mail juiz':email_juiz
+                        }
+                    ]
+                    )
+                    updated_df = pd.concat([temporario_rodada, cadastro_rodada], ignore_index=True)
+                    conn.update(worksheet='TdS_Suporte', data=updated_df)
+                    st.success('Escalação Cadastrada!')
+        else:
+            st.success('### Equipe já escalada para esta rodada')
+            st.dataframe(temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)])
 
     authenticator.logout('Logout','sidebar')
