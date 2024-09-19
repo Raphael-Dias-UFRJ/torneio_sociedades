@@ -47,22 +47,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 3,2,Hermenêutica,Ana Letícia da Silva Ramos,2° GOVERNO,WG,4°,65
 3,2,Senatus,Carolina Amorim,2ª OPOSIÇÃO,MO,1°,76
 3,2,Senatus,Olívia Palmier,2ª OPOSIÇÃO,WO,1°,75
-4,1,SdDUFSC,,1° GOVERNO,PM,,
-4,1,SdDUFSC,,1° GOVERNO,VPM,,
-4,1,SDUFRJ,,1ª OPOSIÇÃO,LO,,
-4,1,SDUFRJ,,1ª OPOSIÇÃO,VLO,,
-4,1,GDO,,2° GOVERNO,MG,,
-4,1,GDO,,2° GOVERNO,WG,,
-4,1,SDP,,2ª OPOSIÇÃO,MO,,
-4,1,SDP,,2ª OPOSIÇÃO,WO,,
-4,2,Hermenêutica,,1° GOVERNO,PM,,
-4,2,Hermenêutica,,1° GOVERNO,VPM,,
-4,2,SdDUFC,,1ª OPOSIÇÃO,LO,,
-4,2,SdDUFC,,1ª OPOSIÇÃO,VLO,,
-4,2,Senatus,,2° GOVERNO,MG,,
-4,2,Senatus,,2° GOVERNO,WG,,
-4,2,SDS,,2ª OPOSIÇÃO,MO,,
-4,2,SDS,,2ª OPOSIÇÃO,WO,,
+4,1,SdDUFSC,Sofia Pereira da Silva,1° GOVERNO,PM,2°,72
+4,1,SdDUFSC,Amanda Sansolo,1° GOVERNO,VPM,2°,73
+4,1,SDUFRJ,Luis Otávio Mury,1ª OPOSIÇÃO,LO,3°,72
+4,1,SDUFRJ,Carol Damascena,1ª OPOSIÇÃO,VLO,3°,70
+4,1,GDO,Mateus Beninca,2° GOVERNO,MG,1°,76
+4,1,GDO,Isadora Rosa Silva,2° GOVERNO,WG,1°,73
+4,1,SDP,Maria Regina Diniz,2ª OPOSIÇÃO,MO,4°,68
+4,1,SDP,Isabelle Ferreira,2ª OPOSIÇÃO,WO,4°,68
+4,2,Hermenêutica,Gabriel Palhares,1° GOVERNO,PM,3°,67
+4,2,Hermenêutica,Thiago Goes,1° GOVERNO,VPM,3°,67
+4,2,SdDUFC,Isabela Veras,1ª OPOSIÇÃO,LO,4°,62
+4,2,SdDUFC,Carlos Kim Sousa,1ª OPOSIÇÃO,VLO,4°,62
+4,2,Senatus,Arthur Aguiar,2° GOVERNO,MG,1°,78
+4,2,Senatus,Ana Júlia,2° GOVERNO,WG,1°,76
+4,2,SDS,Raquel Sarubbi,2ª OPOSIÇÃO,MO,2°,76
+4,2,SDS,Jarderson Castro,2ª OPOSIÇÃO,WO,2°,73
 5,1,SDP,,1° GOVERNO,PM,,
 5,1,SDP,,1° GOVERNO,VPM,,
 5,1,GDO,,1ª OPOSIÇÃO,LO,,
