@@ -23,6 +23,9 @@ rodadas = pd.read_csv('data/Registro_CNDC - TdS_Rodadas.csv')
 resultados = pd.read_csv('data/Registro_CNDC - TdS_Resultados.csv')
 juizes = pd.read_csv('data/Registro_CNDC - TdS_Juizes.csv')
 
+#Base de moções
+mocoes = resultados[resultados['Moção'] != '-'][['Rodada','Info','Moção']].reset_index(drop=True)
+
 #Lista de equipes
 lista_rodadas = rodadas['Rodada'].unique()
 sds = delegacoes['instituicao'].unique()
@@ -136,10 +139,16 @@ with col4:
 
 st.divider()
 
-st.write('### TABELA DE DEBATEDORES')
-delegacoes.set_index('Nome', inplace=True)
-delegacoes['Número de Participações'] = resultados['Debatedor'].value_counts()
-delegacoes['Média de Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').mean()
-delegacoes['Total Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').sum()
-delegacoes.sort_values('Total Sps', ascending=False, inplace=True)
-delegacoes
+col7, col8 = st.columns(2)
+
+with col7:
+    st.write('### TABELA DE DEBATEDORES')
+    delegacoes.set_index('Nome', inplace=True)
+    delegacoes['Número de Participações'] = resultados['Debatedor'].value_counts()
+    delegacoes['Média de Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').mean()
+    delegacoes['Total Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').sum()
+    delegacoes.sort_values('Total Sps', ascending=False, inplace=True)
+    delegacoes
+with col8:
+    st.write('### MOÇÕES DEBATIDAS')
+    mocoes

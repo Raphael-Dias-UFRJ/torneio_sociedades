@@ -287,7 +287,9 @@ if authentication_status:
                     conn.update(worksheet='TdS_Resultados', data=resultados)
                     st.success('Resultado da Sala 2 Salvo!')
                 st.divider()
-        sdsfdf
+        st.divider()
+        st.markdown('### TABELA DE SPEAKER POINTS')
+        st.dataframe(spks)
 
 
     else:
