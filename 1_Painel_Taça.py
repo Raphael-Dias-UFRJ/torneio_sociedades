@@ -59,7 +59,6 @@ juizes_rodada = rodadas[rodadas["Rodada"] == int(rodada_corrente)]['Escalação 
 juizes_rodada = juizes_rodada.split('; ')
 juizes_rodada = pd.DataFrame(juizes_rodada, columns=['Juizes'])
 
-#----------- DEFINIÇÃO DE DELEGAÇÃO DO LOGIN ----------------
 
 for index, row in partidas_agregado.iterrows():
     equipe = row['Instituição']

@@ -56,6 +56,9 @@ if authentication_status:
     juizes = conn.read(worksheet='TdS_Juizes', usecols = list(range(5)), ttl=5).dropna(how='all')
     temporario_rodada = conn.read(worksheet='TdS_Suporte', usecols = list(range(6)), ttl=5).dropna(how='all')
 
+    #Tabela de speakers
+    spks = resultados[resultados['Classificação'].notna()]
+
     #Lista de equipes
     lista_rodadas = rodadas['Rodada'].unique()
     sds = delegacoes['instituicao'].unique()
@@ -284,7 +287,7 @@ if authentication_status:
                     conn.update(worksheet='TdS_Resultados', data=resultados)
                     st.success('Resultado da Sala 2 Salvo!')
                 st.divider()
-
+        sdsfdf
 
 
     else:
