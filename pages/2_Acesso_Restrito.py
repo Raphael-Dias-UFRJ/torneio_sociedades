@@ -290,7 +290,8 @@ if authentication_status:
         st.divider()
         st.markdown('### TABELA DE SPEAKER POINTS')
         st.dataframe(spks)
-
+        spks_rodada = spks.pivot(index='Debatedor', columns='Rodada', values='Sps').reset_index()
+        st.dataframe(spks_rodada)
 
     else:
         st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')

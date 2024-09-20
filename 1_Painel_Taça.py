@@ -24,7 +24,7 @@ resultados = pd.read_csv('data/Registro_CNDC - TdS_Resultados.csv')
 juizes = pd.read_csv('data/Registro_CNDC - TdS_Juizes.csv')
 
 #Base de moções
-mocoes = resultados[resultados['Moção'] != '-'][['Rodada','Info','Moção']].reset_index(drop=True)
+mocoes = rodadas[rodadas['Moção'] != '-'][['Rodada','Moção','Info']].set_index('Rodada')
 
 #Lista de equipes
 lista_rodadas = rodadas['Rodada'].unique()
