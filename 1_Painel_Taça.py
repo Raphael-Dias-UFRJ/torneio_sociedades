@@ -39,6 +39,9 @@ sds["N de Primeiros"] = 0
 sds["Total Sps"] = 0
 sds['Juizes Enviados'] = 0
 
+spks = resultados[resultados['Classificação'].notna()]
+spks_rodada = spks.pivot(index='Debatedor', columns='Rodada', values='Sps').reset_index()
+
 juizes['Juiz_cargo'] = juizes['Juiz'] + juizes['Posição']
 juizes['Juizes'] = juizes[['Rodada','Sala','Juiz_cargo']].groupby(['Rodada','Sala'])['Juiz_cargo'].transform(lambda x: ','.join(x))
 juizes_sintetico = juizes.drop(columns=['Juiz','Posição','Juiz_cargo'])
@@ -141,9 +144,13 @@ st.divider()
 
 col7, col8 = st.columns(2)
 
+
+
 with col7:
     st.write('### TABELA DE DEBATEDORES')
-    delegacoes.set_index('Nome', inplace=True)
+    delegacoes = delegacoes.rename(columns={'Nome':'Debatedor'})
+    delegacoes = delegacoes.merge(spks_rodada, on='Debatedor', how='left')
+    delegacoes.set_index('Debatedor', inplace=True)
     delegacoes['Número de Participações'] = resultados['Debatedor'].value_counts()
     delegacoes['Média de Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').mean()
     delegacoes['Total Sps'] = resultados[['Debatedor','Sps']].groupby('Debatedor').sum()
