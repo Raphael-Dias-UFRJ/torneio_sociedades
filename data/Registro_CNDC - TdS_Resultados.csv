@@ -79,22 +79,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 5,2,SdDUFSC,Rafaela Farinella,2° GOVERNO,WG,2°,73
 5,2,Hermeneutica,Arthur Rocha,2ª OPOSIÇÃO,MO,4°,70
 5,2,Hermeneutica,Lara Maryan Lopes,2ª OPOSIÇÃO,WO,4°,71
-6,1,GDO,,1° GOVERNO,PM,,
-6,1,GDO,,1° GOVERNO,VPM,,
-6,1,Hermeneutica,,1ª OPOSIÇÃO,LO,,
-6,1,Hermeneutica,,1ª OPOSIÇÃO,VLO,,
-6,1,Senatus,,2° GOVERNO,MG,,
-6,1,Senatus,,2° GOVERNO,WG,,
-6,1,SdDUFSC,,2ª OPOSIÇÃO,MO,,
-6,1,SdDUFSC,,2ª OPOSIÇÃO,WO,,
-6,2,SDS,,1° GOVERNO,PM,,
-6,2,SDS,,1° GOVERNO,VPM,,
-6,2,SdDUFC,,1ª OPOSIÇÃO,LO,,
-6,2,SdDUFC,,1ª OPOSIÇÃO,VLO,,
-6,2,SDP,,2° GOVERNO,MG,,
-6,2,SDP,,2° GOVERNO,WG,,
-6,2,SDUFRJ,,2ª OPOSIÇÃO,MO,,
-6,2,SDUFRJ,,2ª OPOSIÇÃO,WO,,
+6,1,GDO,Gabriel Chagas,1° GOVERNO,PM,2°,74
+6,1,GDO,Maria Marchesan,1° GOVERNO,VPM,2°,76
+6,1,Hermeneutica,Ysadora Monteiro,1ª OPOSIÇÃO,LO,3°,72
+6,1,Hermeneutica,Allan Haniel,1ª OPOSIÇÃO,VLO,3°,71
+6,1,Senatus,Nina Garbellini,2° GOVERNO,MG,1°,77
+6,1,Senatus,Ana Júlia,2° GOVERNO,WG,1°,75
+6,1,SdDUFSC,Amanda Sansolo,2ª OPOSIÇÃO,MO,4°,70
+6,1,SdDUFSC,Giusepe Junkes,2ª OPOSIÇÃO,WO,4°,72
+6,2,SDS,Pedro Franklin,1° GOVERNO,PM,3°,71
+6,2,SDS,Jarderson Castro,1° GOVERNO,VPM,3°,72
+6,2,SdDUFC,Julia Ribeiro,1ª OPOSIÇÃO,LO,1°,79
+6,2,SdDUFC,Lucas Nóbrega,1ª OPOSIÇÃO,VLO,1°,76
+6,2,SDP,Leonardo Alcântara,2° GOVERNO,MG,2°,74
+6,2,SDP,Sofia Dantas,2° GOVERNO,WG,2°,75
+6,2,SDUFRJ,Carol Damascena,2ª OPOSIÇÃO,MO,4°,70
+6,2,SDUFRJ,Luan Martins,2ª OPOSIÇÃO,WO,4°,69
 7,1,GDO,,1° GOVERNO,PM,,
 7,1,GDO,,1° GOVERNO,VPM,,
 7,1,SDP,,1ª OPOSIÇÃO,LO,,
