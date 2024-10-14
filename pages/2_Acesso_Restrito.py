@@ -304,7 +304,6 @@ if authentication_status:
                                                                                          'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
                                                                                          'Iniciado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
                                                                                          'e-mail': st.column_config.TextColumn()})
-                                                
             update = st.form_submit_button('Atualizar Delegação')
         
         if update:
