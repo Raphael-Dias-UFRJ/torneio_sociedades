@@ -306,10 +306,10 @@ if authentication_status:
                                                                                          'e-mail': st.column_config.TextColumn()})
             update_deleg = st.form_submit_button('Atualizar Delegação')
         
-        if update_deleg:
-            updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
-            conn.update(worksheet='TdS_Delegações', data=updated_df)
-            st.success('Delegação Atualizada!')
+            if update_deleg:
+                updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
+                conn.update(worksheet='TdS_Delegações', data=updated_df)
+                st.success('Delegação Atualizada!')
 
         st.divider()
         st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
