@@ -50,7 +50,7 @@ if authentication_status:
     conn = st.connection('gsheets', type=GSheetsConnection)
 
     #Bases utilizadas
-    delegacoes = conn.read(worksheet='TdS_Delegações', usecols = list(range(2)), ttl=5).dropna(how='all')
+    delegacoes = conn.read(worksheet='TdS_Delegações', usecols = list(range(7)), ttl=5).dropna(how='all')
     rodadas = conn.read(worksheet='TdS_Rodadas', usecols = list(range(6)), ttl=5).dropna(how='all')
     resultados = conn.read(worksheet='TdS_Resultados', usecols = list(range(8)), ttl=5).dropna(how='all')
     juizes = conn.read(worksheet='TdS_Juizes', usecols = list(range(5)), ttl=5).dropna(how='all')
