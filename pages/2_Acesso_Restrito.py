@@ -17,7 +17,7 @@ st.set_page_config(
 
 st.logo('logo_sds/CONDEB PAG 1.png')
 
-names = ["Master","SDUFRJ","Hermenêutica","SdDUFC","SDS","Senatus","GDO","SDP","SdDUFSC"]
+names = ["Master","SDUFRJ","Hermeneutica","SdDUFC","SDS","Senatus","GDO","SDP","SdDUFSC"]
 usernames = ["master","sdufrj","hermeneutica","sddufc","sds","senatus","gdo","sdp","sddufsc"]
 
 file_path = Path(__file__).parent / "hashed_pw.pkl"
@@ -329,6 +329,18 @@ if authentication_status:
                     st.success('Escalação Cadastrada!')
         else:
             st.success('### Equipe já escalada para esta rodada')
-            st.dataframe(temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)])
+            st.dataframe(temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)])        
+        st.divider()
+        st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
+        with st.form(key='update_form'):
+            st.write('### Formulário de Delegação')
+            st.data_editor(delegacoes[delegacoes['instituicao'] == name], height=200)
+            update = st.form_submit_button('Atualizar Delegação')
+        
+        if update:
+            updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
+            conn.update(worksheet='TdS_Delegações', data=updated_df)
+            st.success('Delegação Atualizada!')
 
+    
     authenticator.logout('Logout','sidebar')
