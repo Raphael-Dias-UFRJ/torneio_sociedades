@@ -297,16 +297,10 @@ if authentication_status:
         st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
         with st.form(key='update_form'):
             st.write('### Formulário de Delegação')
-            st.data_editor(delegacoes[delegacoes['instituicao'] == name], column_config={'Nome': st.column_config.TextColumn(), 
-                                                                                         'Instituição': {'editable': False},
-                                                                                         'Instituição de Ensino': st.column_config.TextColumn(),
-                                                                                         'Curso de Graduação': st.column_config.TextColumn(),
-                                                                                         'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
-                                                                                         'Iniciado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
-                                                                                         'e-mail': st.column_config.TextColumn()})
-            update = st.form_submit_button('Atualizar Delegação')
+            st.data_editor(delegacoes[delegacoes['instituicao'] == name], column_config={'Nome': st.column_config.TextColumn(),'Instituição': {'editable': False},'Instituição de Ensino': st.column_config.TextColumn(),'Curso de Graduação': st.column_config.TextColumn(),'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),'Iniciado?': st.column_config.SelectboxColumn(options=['Sim','Não']),'e-mail': st.column_config.TextColumn()})
+            update_deleg = st.form_submit_button('Atualizar Delegação')
         
-        if update:
+        if update_deleg:
             updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
             conn.update(worksheet='TdS_Delegações', data=updated_df)
             st.success('Delegação Atualizada!')
