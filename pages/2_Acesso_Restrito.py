@@ -294,6 +294,18 @@ if authentication_status:
         st.dataframe(spks_rodada)
 
     else:
+        st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
+        with st.form(key='update_form'):
+            st.write('### Formulário de Delegação')
+            st.data_editor(delegacoes[delegacoes['instituicao'] == name], height=200)
+            update = st.form_submit_button('Atualizar Delegação')
+        
+        if update:
+            updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
+            conn.update(worksheet='TdS_Delegações', data=updated_df)
+            st.success('Delegação Atualizada!')
+
+        st.divider()
         st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
 
         if temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)].empty:
@@ -330,17 +342,6 @@ if authentication_status:
         else:
             st.success('### Equipe já escalada para esta rodada')
             st.dataframe(temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)])        
-        st.divider()
-        st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
-        with st.form(key='update_form'):
-            st.write('### Formulário de Delegação')
-            st.data_editor(delegacoes[delegacoes['instituicao'] == name], height=200)
-            update = st.form_submit_button('Atualizar Delegação')
-        
-        if update:
-            updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
-            conn.update(worksheet='TdS_Delegações', data=updated_df)
-            st.success('Delegação Atualizada!')
 
     
     authenticator.logout('Logout','sidebar')
