@@ -298,7 +298,7 @@ if authentication_status:
         with st.form(key='update_form'):
             st.write('### Formulário de Delegação')
             st.data_editor(delegacoes[delegacoes['instituicao'] == name], column_config={'Nome': st.column_config.TextColumn(),'Instituição': {'editable': False},'Instituição de Ensino': st.column_config.TextColumn(),'Curso de Graduação': st.column_config.TextColumn(),'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),'Iniciado?': st.column_config.SelectboxColumn(options=['Sim','Não']),'e-mail': st.column_config.TextColumn()})
-            update_deleg = st.form_submit_button('Atualizar Delegação')
+            update_deleg = st.form_submit_button(label = "Atualizar Delegação")
         
         if update_deleg:
             updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
