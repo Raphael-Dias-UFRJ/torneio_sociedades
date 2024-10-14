@@ -301,8 +301,8 @@ if authentication_status:
                                                                                          'Instituição': {'editable': False},
                                                                                          'Instituição de Ensino': st.column_config.TextColumn(),
                                                                                          'Curso de Graduação': st.column_config.TextColumn(),
-                                                                                         'Formado?': st.column_config.BooleanColumn(),
-                                                                                         'Iniciado?': st.column_config.BooleanColumn(),
+                                                                                         'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
+                                                                                         'Iniciado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
                                                                                          'e-mail': st.column_config.TextColumn()})
                                                 
             update = st.form_submit_button('Atualizar Delegação')
