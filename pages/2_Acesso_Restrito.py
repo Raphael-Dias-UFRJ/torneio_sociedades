@@ -297,11 +297,11 @@ if authentication_status:
         st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
         with st.form(key='update_form'):
             st.write('### Formulário de Delegação')
-            st.data_editor(delegacoes[delegacoes['instituicao'] == name])
+            edited_df = st.data_editor(delegacoes[delegacoes['instituicao'] == name], num_rows="dynamic")
             update_deleg = st.form_submit_button('Atualizar Delegação')
         
             if update_deleg:
-                updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], st.session_state.data_editor], ignore_index=True)
+                updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], edited_df], ignore_index=True)
                 conn.update(worksheet='TdS_Delegações', data=updated_df)
                 st.success('Delegação Atualizada!')
 
