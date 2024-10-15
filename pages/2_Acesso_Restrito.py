@@ -298,7 +298,6 @@ if authentication_status:
         with st.form(key='update_form'):
             st.write('### Formulário de Delegação')
             st.data_editor(delegacoes[delegacoes['instituicao'] == name], column_config={'Nome': st.column_config.TextColumn(), 
-                                                                                         'Instituição': {'editable': False},
                                                                                          'Instituição de Ensino': st.column_config.TextColumn(),
                                                                                          'Curso de Graduação': st.column_config.TextColumn(),
                                                                                          'Formado?': st.column_config.SelectboxColumn(options=['Sim','Não']),
