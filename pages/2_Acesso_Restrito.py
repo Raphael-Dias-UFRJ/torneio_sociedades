@@ -107,6 +107,7 @@ if authentication_status:
 
 
             st.markdown('### Alocação de Juízes')
+            tabela_partidas.loc[rodada_corrente]
             with st.form(key='alocacao_form'):
                 chair_sala_1 = st.text_input('Chair Sala 1')
                 chair_sala_2 = st.text_input('Chair Sala 2')
