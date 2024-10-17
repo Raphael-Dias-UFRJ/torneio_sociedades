@@ -95,22 +95,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 6,2,SDP,Sofia Dantas,2° GOVERNO,WG,2°,75
 6,2,SDUFRJ,Carol Damascena,2ª OPOSIÇÃO,MO,4°,70
 6,2,SDUFRJ,Luan Martins,2ª OPOSIÇÃO,WO,4°,69
-7,1,GDO,,1° GOVERNO,PM,,
-7,1,GDO,,1° GOVERNO,VPM,,
-7,1,SDP,,1ª OPOSIÇÃO,LO,,
-7,1,SDP,,1ª OPOSIÇÃO,VLO,,
-7,1,Hermeneutica,,2° GOVERNO,MG,,
-7,1,Hermeneutica,,2° GOVERNO,WG,,
-7,1,SdDUFC,,2ª OPOSIÇÃO,MO,,
-7,1,SdDUFC,,2ª OPOSIÇÃO,WO,,
-7,2,Senatus,,1° GOVERNO,PM,,
-7,2,Senatus,,1° GOVERNO,VPM,,
-7,2,SdDUFSC,,1ª OPOSIÇÃO,LO,,
-7,2,SdDUFSC,,1ª OPOSIÇÃO,VLO,,
-7,2,SDUFRJ,,2° GOVERNO,MG,,
-7,2,SDUFRJ,,2° GOVERNO,WG,,
-7,2,SDS,,2ª OPOSIÇÃO,MO,,
-7,2,SDS,,2ª OPOSIÇÃO,WO,,
+7,1,GDO,Maria Marchesan,1° GOVERNO,PM,1°,75
+7,1,GDO,Camila Favaretto,1° GOVERNO,VPM,1°,76
+7,1,,SWING A,1ª OPOSIÇÃO,LO,2°,75
+7,1,,SWING B,1ª OPOSIÇÃO,VLO,2°,74
+7,1,Hermeneutica,Rafael Aleixo Fernandes da Silva,2° GOVERNO,MG,4°,70
+7,1,Hermeneutica,Larissa Afonso dos Anjos,2° GOVERNO,WG,4°,69
+7,1,SdDUFC,Laura Bezerra Santos,2ª OPOSIÇÃO,MO,3°,73
+7,1,SdDUFC,Elisa Alves Teles,2ª OPOSIÇÃO,WO,3°,73
+7,2,Senatus,Carolina Amorim,1° GOVERNO,PM,2°,79
+7,2,Senatus,Davi Afonso,1° GOVERNO,VPM,2°,76
+7,2,SdDUFSC,Vitor de Gaspari,1ª OPOSIÇÃO,LO,4°,70
+7,2,SdDUFSC,Eric Severo,1ª OPOSIÇÃO,VLO,4°,73
+7,2,SDUFRJ,Daniel Rocha,2° GOVERNO,MG,3°,76
+7,2,SDUFRJ,Cecília Antunes,2° GOVERNO,WG,3°,74
+7,2,SDS,Lucas Romeu,2ª OPOSIÇÃO,MO,1°,79
+7,2,SDS,Silvio Vieira,2ª OPOSIÇÃO,WO,1°,78
 8,1,SDUFRJ,,1° GOVERNO,PM,,
 8,1,SDUFRJ,,1° GOVERNO,VPM,,
 8,1,SDS,,1ª OPOSIÇÃO,LO,,

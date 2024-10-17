@@ -1,82 +1,79 @@
-instituicao,Nome
-SDUFRJ,Guilherme Carvalho
-SDUFRJ,Willian Souza
-SDUFRJ,Nathalia Macedo
-SDUFRJ,Carol Damascena
-SDUFRJ,Cecília Antunes
-SDUFRJ,Luan Martins
-SDUFRJ,Luis Otávio Mury
-SDUFRJ,Daniel Rocha
-GDO,Camila Favaretto
-GDO,Gabriel Chagas
-GDO,Isadora Rosa Silva
-GDO,João Vitor Blini
-GDO,Manoela Caldeira
-GDO,Maria Marchesan
-GDO,Mateus Beninca
-GDO,Matheus Colombo
-SdDUFC,Elisa Alves Teles
-SdDUFC,Laura Bezerra Santos
-SdDUFC,Julia Sombra
-SdDUFC,Lucas Nóbrega
-SdDUFC,Charlotte Giraud
-SdDUFC,Beatriz Sombra
-SdDUFC,Carlos Kim Sousa
-SdDUFC,Julia Ribeiro
-SdDUFC,Isabela Veras
-SdDUFC,Ana Livia Florindo
-SdDUFC,Beatriz Acioli
-SdDUFC,Paulo Rodrigues
-SDS,Lucas Romeu
-SDS,Diogo Sampaio
-SDS,Caio Roberto
-SDS,Ravel Bonfim
-SDS,Raquel Sarubbi
-SDS,Jarderson Castro
-SDS,Silvio Vieira
-SDS,Lucas Felinto
-SDS,Pedro Franklin
-SDS,Annara Cardoso
-SdDUFSC,Amanda Sansolo
-SdDUFSC,Sofia Pereira da Silva
-SdDUFSC,Giusepe Junkes
-SdDUFSC,Giovanna Campanelli
-SdDUFSC,Carol Resmini
-SdDUFSC,Rafaela Farinella
-SdDUFSC,Eric Severo
-SdDUFSC,Cali Peixoto
-SdDUFSC,Luíza Cipriani
-SdDUFSC,Thales Donato
-SdDUFSC,Luan DiPaula
-Hermeneutica,Arthur Rocha
-Hermeneutica,Ysadora Monteiro
-Hermeneutica,Gregory Nunes
-Hermeneutica,Ana Letícia da Silva Ramos
-Hermeneutica,Lara Maryan Lopes
-Hermeneutica,Ana Julia Russi
-Hermeneutica,Larissa Afonso dos Anjos
-Hermeneutica,Gabriel Palhares
-Hermeneutica,Thiago Goes
-Hermeneutica,Gabriel Mendes
-Hermeneutica,Allan Haniel
-Hermeneutica,Rafael Aleixo Fernandes da Silva
-Senatus,Olívia Palmier
-Senatus,João Milton Souza
-Senatus,Arthur Aguiar
-Senatus,Nina Garbellini
-Senatus,Carolina Amorim
-Senatus,Davi Afonso
-Senatus,Ana Júlia
-Senatus,Bernardo Kemp
-SDP,Beatriz Caetano
-SDP,Cecília Rodrigues
-SDP,Sofia Dantas
-SDP,Deborah Simonetti
-SDP,Ana Luiza Araújo
-SDP,Jônatas Aguiar
-SDP,Beatriz Augusto
-SDP,Leonardo Alcântara
-SDP,Solane Ubarana
-SDP,Letícia Beck
-SDP,Maria Regina Diniz
-SDP,Isabelle Ferreira
+instituicao,Nome,Instituição de Ensino,Curso de Graduação,Formado?,Iniciado?,e-mail
+GDO,Camila Favaretto,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Gabriel Chagas,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Isadora Rosa Silva,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,João Vitor Blini,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Manoela Caldeira,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Maria Marchesan,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Mateus Beninca,Pendente,Pendente,Pendente,Pendente,Pendente
+GDO,Matheus Colombo,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Arthur Rocha,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Ysadora Monteiro,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Gregory Nunes,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Ana Letícia da Silva Ramos,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Lara Maryan Lopes,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Ana Julia Russi,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Larissa Afonso dos Anjos,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Gabriel Palhares,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Thiago Goes,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Gabriel Mendes,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Allan Haniel,Pendente,Pendente,Pendente,Pendente,Pendente
+Hermeneutica,Rafael Aleixo Fernandes da Silva,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Beatriz Caetano,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Cecília Rodrigues,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Sofia Dantas,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Deborah Simonetti,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Ana Luiza Araújo,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Jônatas Aguiar,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Beatriz Augusto,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Leonardo Alcântara,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Solane Ubarana,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Letícia Beck,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Maria Regina Diniz,Pendente,Pendente,Pendente,Pendente,Pendente
+SDP,Isabelle Ferreira,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Lucas Romeu,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Diogo Sampaio,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Ravel Bonfim,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Raquel Sarubbi,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Jarderson Castro,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Silvio Vieira,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Pedro Franklin,Pendente,Pendente,Pendente,Pendente,Pendente
+SDS,Annara Cardoso,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Olívia Palmier,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,João Milton Souza,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Arthur Aguiar,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Nina Garbellini,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Carolina Amorim,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Davi Afonso,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Ana Júlia,Pendente,Pendente,Pendente,Pendente,Pendente
+Senatus,Bernardo Kemp,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Amanda Sansolo,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Sofia Pereira da Silva,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Giusepe Junkes,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Giovanna Campanelli,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Carol Resmini,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Rafaela Farinella,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Eric Severo,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Cali Peixoto,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Luan DiPaula,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFSC,Vitor de Gaspari,UFSC,Relações Internacionais,não,não,"vitordegaspari@gmail.com
+"
+SdDUFC,Elisa Alves Teles,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Laura Bezerra Santos,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Julia Sombra,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Lucas Nóbrega,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Carlos Kim Sousa,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Julia Ribeiro,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Isabela Veras,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Ana Livia Florindo,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Beatriz Acioli,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Paulo Rodrigues,Pendente,Pendente,Pendente,Pendente,Pendente
+SdDUFC,Juan Garcia,UFC,Direito,Sim,Nao,
+SDUFRJ,Guilherme Carvalho,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Willian Souza,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Dray,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Carol Damascena,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Cecília Antunes,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Luan Martins,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Luis Otávio Mury,Pendente,Pendente,Pendente,Pendente,Pendente
+SDUFRJ,Daniel Rocha,Pendente,Pendente,Pendente,Pendente,Pendente
