@@ -30,8 +30,8 @@ mocoes = rodadas[rodadas['Moção'] != '-'][['Rodada','Moção','Info']].set_ind
 lista_rodadas = rodadas['Rodada'].unique()
 sds = delegacoes['instituicao'].unique()
 sds = pd.DataFrame(sds, columns=['Instituição'])
-imagens_sds = ['logo_sds/sdufrj.jpeg', 'logo_sds/gdo.jpeg','logo_sds/sddufc.jpeg','logo_sds/sds.jpeg'
-                ,'logo_sds/sddufsc.jpeg','logo_sds/hermeneutica.jpeg','logo_sds/senatus.jpeg','logo_sds/sdp.jpeg']
+imagens_sds = ['logo_sds/gdo.jpeg', 'logo_sds/hermeneutica.jpeg','logo_sds/sddufc.jpeg','logo_sds/sddufsc.jpeg'
+                ,'logo_sds/sdp.jpeg','logo_sds/sds.jpeg','logo_sds/sdufrj.jpeg','logo_sds/senatus.jpeg']
 sds[' '] = imagens_sds
 sds.set_index('Instituição', inplace=True)
 sds["Pontos"] = 0
