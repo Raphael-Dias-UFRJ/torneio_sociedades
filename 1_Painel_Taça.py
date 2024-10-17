@@ -19,7 +19,7 @@ st.divider()
 
 #Bases utilizadas
 delegacoes = pd.read_csv('data/Registro_CNDC - TdS_Delegações.csv')
-delegacoes = delegacoes[['Debatedor','instituicao']]
+delegacoes = delegacoes[['Nome','instituicao']]
 rodadas = pd.read_csv('data/Registro_CNDC - TdS_Rodadas.csv')
 resultados = pd.read_csv('data/Registro_CNDC - TdS_Resultados.csv')
 juizes = pd.read_csv('data/Registro_CNDC - TdS_Juizes.csv')
