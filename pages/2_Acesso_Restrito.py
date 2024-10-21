@@ -295,18 +295,6 @@ if authentication_status:
         st.dataframe(spks_rodada)
 
     else:
-        st.write('# ATUALIZAÇÃO DE DELEGAÇÃO')
-        with st.form(key='update_form'):
-            st.write('### Formulário de Delegação')
-            edited_df = st.data_editor(delegacoes[delegacoes['instituicao'] == name], num_rows="dynamic")
-            update_deleg = st.form_submit_button('Atualizar Delegação')
-        
-            if update_deleg:
-                updated_df = pd.concat([delegacoes[delegacoes['instituicao'] != name], edited_df], ignore_index=True)
-                conn.update(worksheet='TdS_Delegações', data=updated_df)
-                st.success('Delegação Atualizada!')
-
-        st.divider()
         st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
 
         if temporario_rodada[(temporario_rodada['rodada'] == int(rodada_corrente)) & (temporario_rodada['delegação'] == name)].empty:
