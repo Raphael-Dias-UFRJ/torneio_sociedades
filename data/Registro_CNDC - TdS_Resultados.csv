@@ -111,22 +111,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 7,2,SDUFRJ,Cecília Antunes,2° GOVERNO,WG,3°,74
 7,2,SDS,Lucas Romeu,2ª OPOSIÇÃO,MO,1°,79
 7,2,SDS,Silvio Vieira,2ª OPOSIÇÃO,WO,1°,78
-8,1,SDUFRJ,,1° GOVERNO,PM,,
-8,1,SDUFRJ,,1° GOVERNO,VPM,,
-8,1,SDS,,1ª OPOSIÇÃO,LO,,
-8,1,SDS,,1ª OPOSIÇÃO,VLO,,
-8,1,GDO,,2° GOVERNO,MG,,
-8,1,GDO,,2° GOVERNO,WG,,
-8,1,Senatus,,2ª OPOSIÇÃO,MO,,
-8,1,Senatus,,2ª OPOSIÇÃO,WO,,
-8,2,SdDUFSC,,1° GOVERNO,PM,,
-8,2,SdDUFSC,,1° GOVERNO,VPM,,
-8,2,SDP,,1ª OPOSIÇÃO,LO,,
-8,2,SDP,,1ª OPOSIÇÃO,VLO,,
-8,2,SdDUFC,,2° GOVERNO,MG,,
-8,2,SdDUFC,,2° GOVERNO,WG,,
-8,2,Hermeneutica,,2ª OPOSIÇÃO,MO,,
-8,2,Hermeneutica,,2ª OPOSIÇÃO,WO,,
+8,1,SDUFRJ,Luis Otávio Mury,1° GOVERNO,PM,3°,75
+8,1,SDUFRJ,Cecília Antunes,1° GOVERNO,VPM,3°,74
+8,1,SDS,Pedro Franklin,1ª OPOSIÇÃO,LO,2°,74
+8,1,SDS,Raquel Sarubbi,1ª OPOSIÇÃO,VLO,2°,76
+8,1,GDO,Mateus Beninca,2° GOVERNO,MG,4°,75
+8,1,GDO,Matheus Colombo,2° GOVERNO,WG,4°,73
+8,1,Senatus,Carolina Amorim,2ª OPOSIÇÃO,MO,1°,76
+8,1,Senatus,Olívia Palmier,2ª OPOSIÇÃO,WO,1°,77
+8,2,SdDUFSC,Carol Resmini,1° GOVERNO,PM,2°,74
+8,2,SdDUFSC,Thales Donato,1° GOVERNO,VPM,2°,76
+8,2,SDP,Eliseu Gomes,1ª OPOSIÇÃO,LO,3°,70
+8,2,SDP,Leonardo Alcântara,1ª OPOSIÇÃO,VLO,3°,70
+8,2,SdDUFC,Laura Bezerra Santos,2° GOVERNO,MG,1°,77
+8,2,SdDUFC,Elisa Alves Teles,2° GOVERNO,WG,1°,76
+8,2,Hermeneutica,Gregory Nunes,2ª OPOSIÇÃO,MO,4°,68
+8,2,Hermeneutica,Ysadora Monteiro,2ª OPOSIÇÃO,WO,4°,70
 9,1,SdDUFC,,1° GOVERNO,PM,,
 9,1,SdDUFC,,1° GOVERNO,VPM,,
 9,1,SDUFRJ,,1ª OPOSIÇÃO,LO,,
