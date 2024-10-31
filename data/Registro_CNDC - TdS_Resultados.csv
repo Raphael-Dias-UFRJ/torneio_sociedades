@@ -127,22 +127,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 8,2,SdDUFC,Elisa Alves Teles,2° GOVERNO,WG,1°,76
 8,2,Hermeneutica,Gregory Nunes,2ª OPOSIÇÃO,MO,4°,68
 8,2,Hermeneutica,Ysadora Monteiro,2ª OPOSIÇÃO,WO,4°,70
-9,1,SdDUFC,,1° GOVERNO,PM,,
-9,1,SdDUFC,,1° GOVERNO,VPM,,
-9,1,SDUFRJ,,1ª OPOSIÇÃO,LO,,
-9,1,SDUFRJ,,1ª OPOSIÇÃO,VLO,,
-9,1,SdDUFSC,,2° GOVERNO,MG,,
-9,1,SdDUFSC,,2° GOVERNO,WG,,
-9,1,GDO,,2ª OPOSIÇÃO,MO,,
-9,1,GDO,,2ª OPOSIÇÃO,WO,,
-9,2,SDP,,1° GOVERNO,PM,,
-9,2,SDP,,1° GOVERNO,VPM,,
-9,2,Senatus,,1ª OPOSIÇÃO,LO,,
-9,2,Senatus,,1ª OPOSIÇÃO,VLO,,
-9,2,Hermeneutica,,2° GOVERNO,MG,,
-9,2,Hermeneutica,,2° GOVERNO,WG,,
-9,2,SDS,,2ª OPOSIÇÃO,MO,,
-9,2,SDS,,2ª OPOSIÇÃO,WO,,
+9,1,SdDUFC,Julia Ribeiro,1° GOVERNO,PM,1°,76
+9,1,SdDUFC,Elisa Alves Teles,1° GOVERNO,VPM,1°,73
+9,1,SDUFRJ,Luis Otávio Mury,1ª OPOSIÇÃO,LO,3°,73
+9,1,SDUFRJ,Pedro Gajardo Dray,1ª OPOSIÇÃO,VLO,3°,72
+9,1,SdDUFSC,Sofia Pereira da Silva,2° GOVERNO,MG,4°,70
+9,1,SdDUFSC,Eric Severo,2° GOVERNO,WG,4°,69
+9,1,GDO,Mateus Beninca,2ª OPOSIÇÃO,MO,2°,74
+9,1,GDO,Maria Marchesan,2ª OPOSIÇÃO,WO,2°,72
+9,2,,SWING A,1° GOVERNO,PM,1°,79
+9,2,,SWING B,1° GOVERNO,VPM,1°,78
+9,2,Senatus,Nina Garbellini,1ª OPOSIÇÃO,LO,3°,77
+9,2,Senatus,João Milton Souza,1ª OPOSIÇÃO,VLO,3°,75
+9,2,,SWING A,2° GOVERNO,MG,4°,76
+9,2,,SWING B,2° GOVERNO,WG,4°,75
+9,2,SDS,Lucas Romeu,2ª OPOSIÇÃO,MO,2°,77
+9,2,SDS,Silvio Vieira,2ª OPOSIÇÃO,WO,2°,76
 10,1,Senatus,,1° GOVERNO,PM,,
 10,1,Senatus,,1° GOVERNO,VPM,,
 10,1,GDO,,1ª OPOSIÇÃO,LO,,
