@@ -143,22 +143,22 @@ Rodada,Sala,Instituição,Debatedor,Casa,Posição,Classificação,Sps
 9,2,,SWING D,2° GOVERNO,WG,4°,75
 9,2,SDS,Lucas Romeu,2ª OPOSIÇÃO,MO,2°,77
 9,2,SDS,Silvio Vieira,2ª OPOSIÇÃO,WO,2°,76
-10,1,Senatus,,1° GOVERNO,PM,,
-10,1,Senatus,,1° GOVERNO,VPM,,
-10,1,GDO,,1ª OPOSIÇÃO,LO,,
-10,1,GDO,,1ª OPOSIÇÃO,VLO,,
-10,1,SDP,,2° GOVERNO,MG,,
-10,1,SDP,,2° GOVERNO,WG,,
-10,1,SdDUFSC,,2ª OPOSIÇÃO,MO,,
-10,1,SdDUFSC,,2ª OPOSIÇÃO,WO,,
-10,2,Hermeneutica,,1° GOVERNO,PM,,
-10,2,Hermeneutica,,1° GOVERNO,VPM,,
-10,2,SDS,,1ª OPOSIÇÃO,LO,,
-10,2,SDS,,1ª OPOSIÇÃO,VLO,,
-10,2,SdDUFC,,2° GOVERNO,MG,,
-10,2,SdDUFC,,2° GOVERNO,WG,,
-10,2,SDUFRJ,,2ª OPOSIÇÃO,MO,,
-10,2,SDUFRJ,,2ª OPOSIÇÃO,WO,,
+10,1,Senatus,Olívia Palmier,1° GOVERNO,PM,3°,76
+10,1,Senatus,Nina Garbellini,1° GOVERNO,VPM,3°,78
+10,1,GDO,Maria Marchesan,1ª OPOSIÇÃO,LO,2°,80
+10,1,GDO,Manoela Caldeira,1ª OPOSIÇÃO,VLO,2°,79
+10,1,,SWING A,2° GOVERNO,MG,4°,75
+10,1,,SWING B,2° GOVERNO,WG,4°,73
+10,1,SdDUFSC,Carol Resmini,2ª OPOSIÇÃO,MO,1°,80
+10,1,SdDUFSC,Giovanna Campanelli,2ª OPOSIÇÃO,WO,1°,81
+10,2,Hermeneutica,Allan Haniel,1° GOVERNO,PM,4°,66
+10,2,Hermeneutica,Allan Haniel,1° GOVERNO,VPM,4°,67
+10,2,SDS,Pedro Franklin,1ª OPOSIÇÃO,LO,2°,72
+10,2,SDS,Raquel Sarubbi,1ª OPOSIÇÃO,VLO,2°,74
+10,2,SdDUFC,Julia Ribeiro,2° GOVERNO,MG,1°,76
+10,2,SdDUFC,Juan Garcia,2° GOVERNO,WG,1°,76
+10,2,SDUFRJ,Luis Otávio Mury,2ª OPOSIÇÃO,MO,3°,71
+10,2,SDUFRJ,Daniel Rocha,2ª OPOSIÇÃO,WO,3°,73
 11,1,SDS,,1° GOVERNO,PM,,
 11,1,SDS,,1° GOVERNO,VPM,,
 11,1,SdDUFSC,,1ª OPOSIÇÃO,LO,,
