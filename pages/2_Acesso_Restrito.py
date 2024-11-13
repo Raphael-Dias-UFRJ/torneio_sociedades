@@ -288,11 +288,6 @@ if authentication_status:
                     conn.update(worksheet='TdS_Resultados', data=resultados)
                     st.success('Resultado da Sala 2 Salvo!')
                 st.divider()
-        st.divider()
-        st.markdown('### TABELA DE SPEAKER POINTS')
-        st.dataframe(spks)
-        spks_rodada = spks.pivot(index='Debatedor', columns='Rodada', values='Sps').reset_index()
-        st.dataframe(spks_rodada)
 
     else:
         st.write('### Escalação de Equipe (Rodada ' + str(int(rodada_corrente)) + ')')
@@ -301,13 +296,6 @@ if authentication_status:
             with st.form(key="escalacao_form"):
                 debatedor_1 = st.selectbox('Debatedor 1', debatedores, index=None)
                 debatedor_2 = st.selectbox('Debatedor 2', debatedores, index=None)
-                if juizes_rodada[juizes_rodada['Juizes'] == str(name)].empty:
-                    st.caption('### SD não escalada para enviar juiz para esta rodada')
-                    juiz = ''
-                    email_juiz = ''
-                else:
-                    juiz = st.text_input('Juiz Representante')
-                    email_juiz = st.text_input('Email do Juiz')
                 cadastrar = st.form_submit_button(label = "Cadastrar")
             if cadastrar:
                 if not debatedor_1 or not debatedor_2:
@@ -320,8 +308,8 @@ if authentication_status:
                             'delegação': name,
                             'membro 1': debatedor_1,
                             'membro 2': debatedor_2,
-                            'juiz': juiz,
-                            'e-mail juiz':email_juiz
+                            'juiz': '',
+                            'e-mail juiz':''
                         }
                     ]
                     )
