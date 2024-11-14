@@ -132,12 +132,6 @@ if authentication_status:
     sds[" "] = sds.apply(lambda x: open_image(x[' ']), axis=1)
     sds = sds[[' ','Instituição','Pontos','N de Primeiros','Total Sps','Juizes Enviados']]
         
-    st.write('### TABELA DA COMPETIÇÃO')
-    st.dataframe(sds,
-                    column_config={
-                        "Total Sps": st.column_config.ProgressColumn('Total Sps', format="%d", min_value=0, max_value=str(sds['Total Sps'].max())),
-                        " ":st.column_config.ImageColumn()
-                    })
     st.divider()
 
     #----------- DEFINIÇÃO DE DELEGAÇÃO DO LOGIN ----------------
@@ -148,6 +142,12 @@ if authentication_status:
     #----------- ATUALIZAÇÃO DE DEBATEDOR DA PARTIDA ----------------
 
     if name == 'Master':
+        st.write('### TABELA DA COMPETIÇÃO')
+        st.dataframe(sds,
+                    column_config={
+                        "Total Sps": st.column_config.ProgressColumn('Total Sps', format="%d", min_value=0, max_value=str(sds['Total Sps'].max())),
+                        " ":st.column_config.ImageColumn()
+                    })
         st.write('### Aconpanhamento de inscrições: Rodada ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
         st.dataframe(temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)])
         falta_escalacao = sds[~sds['Instituição'].isin(temporario_rodada[temporario_rodada['rodada'] == int(rodada_corrente)]['delegação'].unique())]
