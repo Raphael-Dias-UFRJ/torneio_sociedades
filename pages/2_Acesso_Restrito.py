@@ -55,24 +55,36 @@ if authentication_status:
     resultados = conn.read(worksheet='TdS_Resultados', usecols = list(range(8)), ttl=5).dropna(how='all')
     juizes = conn.read(worksheet='TdS_Juizes', usecols = list(range(5)), ttl=5).dropna(how='all')
     temporario_rodada = conn.read(worksheet='TdS_Suporte', usecols = list(range(6)), ttl=5).dropna(how='all')
-
-    #Tabela de speakers
-    spks = resultados[resultados['Classificação'].notna()]
-
+    
+    #Base de moções
+    mocoes = rodadas[rodadas['Moção'] != '-'][['Rodada','Moção','Info']].set_index('Rodada')
+    
     #Lista de equipes
     lista_rodadas = rodadas['Rodada'].unique()
     sds = delegacoes['instituicao'].unique()
     sds = pd.DataFrame(sds, columns=['Instituição'])
+    imagens_sds = ['logo_sds/gdo.jpeg', 'logo_sds/hermeneutica.jpeg','logo_sds/sddufc.jpeg','logo_sds/sddufsc.jpeg'
+                    ,'logo_sds/sdp.jpeg','logo_sds/sds.jpeg','logo_sds/sdufrj.jpeg','logo_sds/senatus.jpeg']
+    sds[' '] = imagens_sds
+    sds.set_index('Instituição', inplace=True)
+    sds["Pontos"] = 0
+    sds["N de Primeiros"] = 0
+    sds["Total Sps"] = 0
+    sds['Juizes Enviados'] = 0
+    
+    spks = resultados[resultados['Classificação'].notna()]
+    spks_rodada = spks.pivot(index='Debatedor', columns='Rodada', values='Sps').reset_index()
+    
     juizes['Juiz_cargo'] = juizes['Juiz'] + juizes['Posição']
     juizes['Juizes'] = juizes[['Rodada','Sala','Juiz_cargo']].groupby(['Rodada','Sala'])['Juiz_cargo'].transform(lambda x: ','.join(x))
     juizes_sintetico = juizes.drop(columns=['Juiz','Posição','Juiz_cargo'])
     juizes_sintetico = juizes[['Rodada','Sala','Juizes']].drop_duplicates().reset_index(drop=True).set_index('Rodada')
-
+    
     partidas_agregado = resultados[['Rodada','Sala','Instituição','Casa','Classificação','Sps']].groupby(['Rodada','Sala','Instituição','Casa']).agg({'Classificação':'max', 'Sps':'sum'}).reset_index()
     tabela_partidas = partidas_agregado.pivot(index=['Rodada', 'Sala'], columns='Casa', values='Instituição').reset_index()
     tabela_partidas = tabela_partidas[['Rodada','Sala','1° GOVERNO','1ª OPOSIÇÃO','2° GOVERNO','2ª OPOSIÇÃO']].set_index('Rodada')
     tabela_resultado = partidas_agregado.pivot(index='Instituição', columns='Rodada', values='Classificação').reset_index('Instituição')
-
+    
     base_resultados = partidas_agregado.copy()
     base_resultados['Resultado'] = base_resultados['Instituição'] + ' - ' + base_resultados['Classificação'].astype(str)
     base_resultados = base_resultados.pivot(index=['Rodada','Sala'], columns='Casa', values='Resultado').reset_index()
@@ -81,10 +93,52 @@ if authentication_status:
     rodada_corrente = resultados[resultados['Classificação'].isnull()]['Rodada'].reset_index(drop=True)[0]
     data_rodada_corrente = rodadas[rodadas['Rodada'] == rodada_corrente]['Data'].reset_index(drop=True)[0]
     base_resultados = base_resultados[base_resultados['Juizes'].notna()]
-
+    
     juizes_rodada = rodadas[rodadas["Rodada"] == int(rodada_corrente)]['Escalação Juízes'].reset_index(drop=True)[0]
     juizes_rodada = juizes_rodada.split('; ')
     juizes_rodada = pd.DataFrame(juizes_rodada, columns=['Juizes'])
+    
+    
+    for index, row in partidas_agregado.iterrows():
+        equipe = row['Instituição']
+        resultado = row['Classificação']
+        sds.loc[equipe, 'Total Sps'] += row['Sps']
+        if resultado == '1°':
+            sds.loc[equipe, 'Pontos'] += 3
+            sds.loc[equipe, 'N de Primeiros'] += 1
+        elif resultado == '2°':
+            sds.loc[equipe, 'Pontos'] += 2
+        elif resultado == '3°':
+            sds.loc[equipe, 'Pontos'] += 1
+        elif resultado == '4°':
+            sds.loc[equipe, 'Pontos'] += 0
+    
+    for indez, row in juizes.iterrows():
+        equipe = row['SD']
+        if equipe != 'Condeb':
+            sds.loc[equipe, 'Juizes Enviados'] += 1
+    
+    sds.sort_values(['Pontos', 'N de Primeiros', 'Total Sps'], ascending=[False, False, False], inplace=True)
+    sds.reset_index(inplace=True)
+    sds.index += 1
+    sds['Colocação'] = sds.index
+    sds.set_index('Colocação', inplace=True)
+    
+    def open_image(path: str):
+        with open(path, "rb") as p:
+            file = p.read()
+            return f"data:image/png;base64,{base64.b64encode(file).decode()}"
+      
+    sds[" "] = sds.apply(lambda x: open_image(x[' ']), axis=1)
+    sds = sds[[' ','Instituição','Pontos','N de Primeiros','Total Sps','Juizes Enviados']]
+        
+    st.write('### TABELA DA COMPETIÇÃO')
+    st.dataframe(sds,
+                    column_config={
+                        "Total Sps": st.column_config.ProgressColumn('Total Sps', format="%d", min_value=0, max_value=str(sds['Total Sps'].max())),
+                        " ":st.column_config.ImageColumn()
+                    })
+    st.divider()
 
     #----------- DEFINIÇÃO DE DELEGAÇÃO DO LOGIN ----------------
 
