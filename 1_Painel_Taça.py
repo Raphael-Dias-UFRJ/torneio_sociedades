@@ -58,13 +58,7 @@ base_resultados['Resultado'] = base_resultados['Instituição'] + ' - ' + base_r
 base_resultados = base_resultados.pivot(index=['Rodada','Sala'], columns='Casa', values='Resultado').reset_index()
 base_resultados = pd.merge(base_resultados, juizes_sintetico, on=['Sala','Rodada'], how='left').reset_index(drop=True).set_index('Rodada')
 base_resultados = base_resultados[['Sala','1° GOVERNO','1ª OPOSIÇÃO','2° GOVERNO','2ª OPOSIÇÃO','Juizes']]
-rodada_corrente = resultados[resultados['Classificação'].isnull()]['Rodada'].reset_index(drop=True)[0]
-data_rodada_corrente = rodadas[rodadas['Rodada'] == rodada_corrente]['Data'].reset_index(drop=True)[0]
 base_resultados = base_resultados[base_resultados['Juizes'].notna()]
-
-juizes_rodada = rodadas[rodadas["Rodada"] == int(rodada_corrente)]['Escalação Juízes'].reset_index(drop=True)[0]
-juizes_rodada = juizes_rodada.split('; ')
-juizes_rodada = pd.DataFrame(juizes_rodada, columns=['Juizes'])
 
 
 for index, row in partidas_agregado.iterrows():
@@ -115,13 +109,6 @@ col1, col2, col10 = st.columns(3)
 with col1:
     st.write('### CHAVEAMENTO')
     tabela_partidas
-
-with col2:
-    st.write('#### Próxima Rodada: ' + str(int(rodada_corrente)) + '(' + str(data_rodada_corrente) + ')')
-    tabela_rodada = tabela_partidas.loc[rodada_corrente]
-    tabela_rodada = tabela_rodada.set_index('Sala')
-    tabela_rodada = tabela_rodada[['1° GOVERNO','1ª OPOSIÇÃO','2° GOVERNO','2ª OPOSIÇÃO']]
-    tabela_rodada
 
 with col10:
     st.write('### CALENDARIO')
